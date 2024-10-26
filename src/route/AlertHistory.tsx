@@ -1,8 +1,6 @@
 import { Checkbox, Col, Row } from "antd";
 import { DataTable, InputFields } from "../components";
 import { AlertHistoryColumns } from "../components/alert_history";
-
-import { CSVOutputButton } from "../components/csv";
 import { alertHistoryData } from "../mocks/data";
 
 export const AlertHistory = () => {
@@ -17,12 +15,6 @@ export const AlertHistory = () => {
         </Col>
       </Row>
       {<DataTable tableColumns={AlertHistoryColumns} data={alertHistoryData} />}
-
-      <CSVOutputButton
-        filename='output'
-        tableColumns={AlertHistoryColumns}
-        data={alertHistoryData}
-      />
     </div>
   );
 };

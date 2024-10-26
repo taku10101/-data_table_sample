@@ -1,12 +1,11 @@
 import { Checkbox, Col, Row } from "antd";
 import { DataTable, InputFields } from "../components";
 import { AlertHistoryColumns } from "../components/alert_history";
-import { useAlertHistory } from "../hooks";
 
 import { CSVOutputButton } from "../components/csv";
+import { alertHistoryData } from "../mocks/data";
 
 export const AlertHistory = () => {
-  const { alertHistory } = useAlertHistory();
   return (
     <div style={{ padding: "20px", background: "#ADD8E6", minHeight: "100vh" }}>
       <h2>5. アラート履歴参照画面</h2>
@@ -17,12 +16,12 @@ export const AlertHistory = () => {
           <Checkbox>ALL</Checkbox>
         </Col>
       </Row>
-      {<DataTable tableColumns={AlertHistoryColumns} data={alertHistory} />}
+      {<DataTable tableColumns={AlertHistoryColumns} data={alertHistoryData} />}
 
       <CSVOutputButton
-        filename="output"
+        filename='output'
         tableColumns={AlertHistoryColumns}
-        data={alertHistory}
+        data={alertHistoryData}
       />
     </div>
   );

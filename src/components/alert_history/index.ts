@@ -1,0 +1,1 @@
+export { AlertHistoryColumns } from "./columns";

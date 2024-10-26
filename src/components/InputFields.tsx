@@ -1,8 +1,16 @@
-import { SearchOutlined } from "@ant-design/icons";
 import { Button, Col, Input, Row } from "antd";
 import { useState } from "react";
-import type { FileOutputDataType } from "../mocks/types";
 
+interface FileOutputDataType {
+  acceptance: string; //受入
+  supplierCode: string; //仕入先
+  supplierPlant: string; //仕入先工区
+  shipDock: string; //出荷場
+  kanbanNo: string; //背番号
+  partNo: string; //品番
+  course: string;
+  location: string; //所在地
+}
 const Fields = [
   { key: "acceptance", label: "受入", placeholder: "xxx" },
   { key: "supplierCode", label: "仕入先", placeholder: "xxx" },
@@ -71,21 +79,12 @@ export const InputFields = () => {
         }}
       >
         <Button
-          type="primary"
+          type='primary'
           onClick={() => {
             alert("クリア");
           }}
         >
           ALLクリア
-        </Button>
-        <Button
-          type="primary"
-          icon={<SearchOutlined />}
-          onClick={() => {
-            alert("検索しました");
-          }}
-        >
-          検索
         </Button>
       </Col>
     </div>

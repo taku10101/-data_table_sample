@@ -1,1 +1,0 @@
-export { sampleColumns } from "./columns";
